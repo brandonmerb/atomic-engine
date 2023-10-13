@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    // Currently we're only targeting support for the latest tools
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    // We want to emit declaration files
+    "declaration": true,
+
+    // Set to true per SWC's recommendation
+    // See: https://swc.rs/docs/migrating-from-tsc
+    "useDefineForClassFields": true,
+
+    // Directory to compile to
+    "outDir": "./dist",
+
+    // Allow other projects to reference this
+    "composite": true,
+
+    // This emits type metadata for decorators. This is heavily leveraged by the DependencyInjection system
+    "emitDecoratorMetadata": true,
+
+    // Required to emit decorator metadata
+    "experimentalDecorators": true,
+
+    // So we can use import syntax with older frameworks like MomentJS
+    "esModuleInterop": true,
+
+    // SWC works file-by-file, so this warns us of code that might break SWC compilation or cause issues
+    // See: https://swc.rs/docs/migrating-from-tsc
+    "isolatedModules": true,
+
+    // Base URL definition so we can use paths
+    "baseUrl": ".",
+
+    // Path definitions to make imports cleaner and less relative
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+
+    // The below options are mostly for code base lint-y things
+    // We want strict type checking
+    "strict": true,
+
+    // Make sure our casing is correct in file names
+    "forceConsistentCasingInFileNames": true,
+
+    // Implicit anys defeat the point of TS imo, so we disallow
+    "noImplicitAny": true,
+
+    // Certain properties make more sense to be initialized in a constructor or etc
+    // rather than requiring initialization at declaration
+    "strictPropertyInitialization": false
+  },
+
+  // Potentially unnecessary
+  // The files we want to include all start in the ./src directory
+  "include": [
+    "src",
+  ],
+}
