@@ -1,0 +1,15 @@
+{
+  "name": "@atomicdesign/atomic-engine",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "author": {
+    "name": "Brandon Erb",
+    "email": "brandom.m.erb@gmail.com"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
