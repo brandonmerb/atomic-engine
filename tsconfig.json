@@ -3,6 +3,7 @@
     // Currently we're only targeting support for the latest tools
     "target": "esnext",
     "module": "esnext",
+    "moduleResolution": "Bundler",
 
     // We want to emit declaration files
     "declaration": true,
