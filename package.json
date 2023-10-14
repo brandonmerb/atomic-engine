@@ -7,6 +7,11 @@
     "name": "Brandon Erb",
     "email": "brandom.m.erb@gmail.com"
   },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && npm run build:vite",
+    "build:vite": "vite build -c vite.config.ts"
+  },
   "devDependencies": {
     "rollup-plugin-swc": "^0.2.1",
     "typescript": "^5.2.2",
@@ -19,5 +24,13 @@
     "@types/jscodeshift": "^0.11.7",
     "ast-types": "^0.16.1",
     "jscodeshift": "^0.15.0"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   }
 }

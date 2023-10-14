@@ -1,0 +1,8 @@
+# Distributions generally shouldn't be included in the repo
+dist/
+
+# 
+node_modules/
+
+# Log files in general
+**.log

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+
+  // Module compilation options
+  "module": {
+    // We want to do ES6 modules. Only building for latest tools currently
+    "type": "es6"
+  },
+  
+  "jsc": {
+    // The Base URL so we can use Paths
+    "baseUrl": "./",
+
+    // Path translations so that the compiler correctly modifies import paths to the appropriate relative path
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+
+    // Parsing options
+    "parser": {
+      // Tell SWC that we're doing TypeScript
+      "syntax": "typescript",
+
+      // Tell SWC that we're using decorators
+      "decorators": true,
+
+      // Not 100% sure what this does with dynamic imports yet
+      "dynamicImport": false
+    },
+
+    // Additional transformation details
+    "transform": {
+      // Make sure SWC also emits decorator metadata
+      "decoratorMetadata": true,
+
+      // Set for consistency with the TSConfig
+      // See: https://swc.rs/docs/migrating-from-tsc
+      "useDefineForClassFields": true
+    }
+  }
+}
