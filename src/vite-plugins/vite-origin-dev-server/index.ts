@@ -17,7 +17,9 @@ export function viteOriginDevServerPlugin(config?: ConfigEnv): PluginOption {
       return {
         server: {
           proxy: {
-            '/api': {}
+            '/api': {
+              changeOrigin: true
+            }
           }
         }
       }

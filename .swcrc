@@ -34,6 +34,9 @@
     "transform": {
       // Make sure SWC also emits decorator metadata
       "decoratorMetadata": true,
+      
+      // Use legacy decorators, since decorator metadata for the new proposals aren't supported yet
+      "legacyDecorator": true,
 
       // Set for consistency with the TSConfig
       // See: https://swc.rs/docs/migrating-from-tsc
