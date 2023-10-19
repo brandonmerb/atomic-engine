@@ -9,9 +9,8 @@
     "email": "brandom.m.erb@gmail.com"
   },
   "scripts": {
-    "clean": "rimraf ./dist",
-    "build": "npm run clean && npm run build:vite",
-    "build:vite": "vite build -c vite.config.ts"
+    "prebuild": "rimraf ./dist",
+    "build": "vite build -c ./config/vite.config.ts"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.62",
