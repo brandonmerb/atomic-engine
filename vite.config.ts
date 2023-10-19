@@ -18,9 +18,9 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
   let plugins = [
     tsconfigPaths(),
     splitVendorChunkPlugin(),
-    dts({
-      rollupTypes: true,
-    }),
+      // dts({
+      //   rollupTypes: true,
+      // }),
     swc.vite({
       configFile: './.swcrc'
     }),
