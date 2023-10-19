@@ -18,9 +18,9 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
   let plugins = [
     tsconfigPaths(),
     splitVendorChunkPlugin(),
-      // dts({
-      //   rollupTypes: true,
-      // }),
+    dts({
+      rollupTypes: true,
+    }),
     swc.vite({
       configFile: './config/.swcrc'
     }),
@@ -43,7 +43,8 @@ export default defineConfig((config: ConfigEnv): UserConfig => {
           "express",
           "@atomicdesign/atomic-singularity",
           "@atomicdesign/atomic-vue",
-          "@atomicdesign/atomic-origin"
+          "@atomicdesign/atomic-origin",
+          "path"
         ]
       }
     },
